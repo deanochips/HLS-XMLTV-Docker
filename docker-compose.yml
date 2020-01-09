@@ -8,9 +8,9 @@ services:
         environment:
             - "MY_IPS=${MY_IPS}"
         volumes:
-            - '/usr/local/bin/HLS_XMLTV/concattest/:/HLS-XMLTV/concat_lists/'
-            - '/usr/local/bin/HLS_XMLTV/configtmp/:/HLS-XMLTV/config/'
-            - '/usr/local/bin/HLS_XMLTV/channels/:/HLS-XMLTV/channels/'
+            - '/your/concat/list/dir/:/HLS-XMLTV/concat_lists/'
+            - '/your/config/list/dir/:/HLS-XMLTV/config/'
+            - '/your/channels/list/dir/:/HLS-XMLTV/channels/'
         tmpfs:
             - '/var/www/html/streams:exec,size=1G,mode=777,uid=82,gid=82'
             - '/tmp:exec,mode=777'
