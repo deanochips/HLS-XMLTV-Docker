@@ -20,20 +20,5 @@ services:
         
         
         
-      #docker run --init
-#      docker run -d   -it   --name HLS-XMLTV   -p 3000:80   --env "MY_IPS=$( hostname -I | cut -d ' ' -f 1 ):3000" --mount type=tmpfs,destination=/var/www/html/streams,tmpfs-mode=1770,tmpfs-size=1073741274   -v /usr/local/bin/HLS_XMLTV/concattest/:/HLS-XMLTV/concat_lists/   -v /usr/local/bin/HLS_XMLTV/configtmp/:/HLS-XMLTV/config/   -v /usr/local/bin/HLS_XMLTV/channels/:/HLS-XMLTV/channels/ 40004e090a59
-# fcgiwrap #m
-#1   location /cgi-bin/ {
-     # Disable gzip (it makes scripts feel slower since they have to complete
-     # before getting gzipped)
- #1    gzip off;
-     # Set the root to /usr/lib (inside this location this means that we are
-     # giving access to the files under /usr/lib/cgi-bin)
-#1     root  /var/www/html;
-     # Fastcgi socket
-#1     fastcgi_pass  unix:/var/run/fcgiwrap.socket;
-     # Fastcgi parameters, include the standard ones
- #1    include /etc/nginx/fastcgi_params;
-     # Adjust non standard parameters (SCRIPT_FILENAME)
-#1     fastcgi_param SCRIPT_FILENAME  $document_root$fastcgi_script_name;
- #1  }
+# [docker run command for users without compose]
+# docker run -d   -it   --name HLS-XMLTV   -p 3000:80   --env "MY_IPS=$( hostname -I | cut -d ' ' -f 1 ):3000" --mount type=tmpfs,destination=/var/www/html/streams,tmpfs-mode=1770,tmpfs-size=1073741274   -v /usr/local/bin/HLS_XMLTV/concattest/:/HLS-XMLTV/concat_lists/   -v /usr/local/bin/HLS_XMLTV/configtmp/:/HLS-XMLTV/config/   -v /usr/local/bin/HLS_XMLTV/channels/:/HLS-XMLTV/channels/ 40004e090a59
