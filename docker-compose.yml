@@ -9,8 +9,8 @@ services:
             - "MY_IPS=${MY_IPS}"
         volumes:
             - '/your/concat/list/dir/:/HLS-XMLTV/concat_lists/'
-            - '/your/config/list/dir/:/HLS-XMLTV/config/'
-            - '/your/channels/list/dir/:/HLS-XMLTV/channels/'
+            - '/your/config/dir/:/HLS-XMLTV/config/'
+            - '/your/channels/dir/:/HLS-XMLTV/channels/'
         tmpfs:
             - '/var/www/html/streams:exec,size=1G,mode=777,uid=82,gid=82'
             - '/tmp:exec,mode=777'
