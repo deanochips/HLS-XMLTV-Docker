@@ -152,7 +152,7 @@ show_menus() {
 	echo "3) Kill all stream - (killall ffmpeg)"
 	echo "4) Clear Cache for Channels - (clear_cache.sh)"
 	echo "5) Generate concat list from folders in your channels folder - (easy_concat_list_maker.sh)"
-	echo "6) Enter Container and HLSXML location, type exit to get back to this menu, useful if you want to interact with stream_laucher.sh or generate_epg.sh directly"
+	echo "6) Enter Container and HLS-XMLTV location, type exit to get back to this menu, useful if you want to interact with stream_laucher.sh or generate_epg.sh directly"
 	echo "7) Access docker crontab"
 	echo "8) Edit config file (this can also be done in you mapped directory on your host)"
 	echo "9) Enter log folder"
@@ -191,8 +191,3 @@ do
 	show_menus
 	read_options
 done
-
-
-
-
-
