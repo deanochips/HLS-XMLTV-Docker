@@ -7,6 +7,7 @@ if [ ! -e /root/$FIRSTSTART ]; then
 echo "First Start" > /tmp/init-status
 
 touch /root/$FIRSTSTART
+ touch /var/log/messages
 
 cd /
 
@@ -61,7 +62,9 @@ ln -s /usr/bin/ffmpeg /bin/ffmpeg
 ln -s /usr/bin/ffprobe /bin/ffprobe
 
 crontab -l | { cat; echo "*/3       *       *       *       *       /HLS-XMLTV/cron.sh CRON_USER"; } | crontab -
-crontab -l | { cat; echo "*/5       *       *       *       *       /bin/bash /usr/sbin/logrotate  /etc/logrotate.conf"; } | crontab -
+
+touch /var/log/messages
+crontab -l | { cat; echo "*/5       *       *       *       *       /usr/sbin/logrotate  /etc/logrotate.conf"; } | crontab -
 
 else
 echo "Normal Start" > /tmp/init-status
