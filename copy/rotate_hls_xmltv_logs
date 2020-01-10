@@ -1,0 +1,27 @@
+/tmp/hxhb/logs/ffmpeg/*.log {
+        size 10M
+        copytruncate
+        missingok
+        rotate 7
+        compress
+        notifempty
+        nocreate
+}
+/tmp/hxhb/logs/cache_splitter/*.log {
+        size 10M
+        copytruncate
+        missingok
+        rotate 7
+        compress
+        notifempty
+        nocreate
+}
+/tmp/hxhb/logs/epg/*.log {
+        size 10M
+        copytruncate
+        missingok
+        rotate 7
+        compress
+        notifempty
+        nocreate
+}
