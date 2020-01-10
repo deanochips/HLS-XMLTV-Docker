@@ -11,6 +11,7 @@ services:
             - '/your/concat/list/dir/:/HLS-XMLTV/concat_lists/'
             - '/your/config/dir/:/HLS-XMLTV/config/'
             - '/your/channels/dir/:/HLS-XMLTV/channels/'
+            - '/your/cache/dir/:/HLS-XMLTV/cache/'
         tmpfs:
             - '/var/www/html/streams:exec,size=1G,mode=777,uid=82,gid=82'
             - '/tmp:exec,mode=777'
