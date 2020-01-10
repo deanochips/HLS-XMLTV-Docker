@@ -37,9 +37,10 @@ this should make your life much easier all the items below are available - (this
 
 
 ### Notes
-if you want to force it to update you can restart, it will boot itself in 3 minuites
-
-you can watch the files start to be generated in <docker_host_ip>:3000/, the first run will take a while to generate the epg but the m3u8 will be readible in the streams folder almost immediately (these can be copy and paste into VLC open network stream for the impatient) 
+if you want to force it to update you can restart, or it will boot itself in 3 minuites
+you can watch the files start to be generated in <docker_host_ip>:3000/,
+the first run will take a while to generate the epg but the m3u8 will be readible in the streams folder almost immediately
+(these can be copy and paste into VLC open network stream for the impatient) 
 
 once the script finished the m3u will be in the base dir of the webdir and xmltv will be in the sub folder
 
