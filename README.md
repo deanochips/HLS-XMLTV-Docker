@@ -13,17 +13,19 @@
 
 ## Setup
 
-### Build Docker Image
+## Build Docker Image
 * clone or download repo to your host
 * edit docker-compose.yml with your details
-* run 
+* run:
+######
 
     $ ./build.sh
 
 this will pass variables to docker-compose up
 
-### Configue
-* run 
+## Configue
+* run:
+######
 
     $ ./tools.sh
  
