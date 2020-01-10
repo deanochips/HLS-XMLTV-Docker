@@ -17,13 +17,13 @@
 * clone or download repo to your host
 * edit docker-compose.yml with your details
 * run 
-    $ ./build.sh
+     $ ./build.sh
 
 this will pass variables to docker-compose up
 
 ### Configue
 * run 
-    $ ./tools.sh
+     $ ./tools.sh
  
 this should make your life much easier all the items below are available - (this can copied anywhere you like on the host)
 
