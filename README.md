@@ -13,7 +13,7 @@
 
 ## Setup
 
-### 1 
+### Build Docker Image
 * clone or download repo to your host
 * edit docker-compose.yml with your details
 * run "$ bash build.sh" - this will pass variables to docker-compose up
@@ -21,7 +21,7 @@
 container should be built...
 
 
-### 2
+### Configue
 * run "$ bash tools.sh" - this should make your life much easier all the items below are available (this can copied anywhere you like on the host)
 * create concat lists for your channels
 * edit config.cfg changing the info in arg_array with your channel info (if you want full episode info and not just filenames you need to enter a tvmaze show id...its the number in the main show url)
