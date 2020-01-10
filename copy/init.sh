@@ -61,7 +61,7 @@ ln -s /HLS-XMLTV/config/config.cfg /HLS-XMLTV/config.cfg
 ln -s /usr/bin/ffmpeg /bin/ffmpeg
 ln -s /usr/bin/ffprobe /bin/ffprobe
 
-crontab -l | { cat; echo "*/3       *       *       *       *       flock -n /tmp/cron.lock /bin/bash /HLS-XMLTV/cron.sh CRON_USER"; } | crontab -
+crontab -l | { cat; echo "*/3       *       *       *       *       /HLS-XMLTV/cron.sh CRON_USER"; } | crontab -
 
 else
 echo "Normal Start" > /tmp/init-status
@@ -73,10 +73,7 @@ chown www-data:www-data /var/www/html/streams
 chmod g+s /var/www/html/streams
 fi
 
-flock -n /tmp/cron.lock /bin/bash /HLS-XMLTV/cron.sh CRON_USER
-
-flock -u /tmp/cron.lock
-
+/HLS-XMLTV/cron.sh CRON_USER &
 
 
 exec "$@"
