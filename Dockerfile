@@ -20,7 +20,9 @@ RUN echo http://dl-cdn.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositor
  htop \
  nano \
  findutils \
- nginx
+ nginx \
+ youtube-dl \
+ xmltv
  
 # merged COPY into one call to reduce docker layers
 COPY /copy/init.sh /copy/.bashrc /copy/default /copy/nginx.conf /copy/rotate_hls_xmltv_logs /tmp/
