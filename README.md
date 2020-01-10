@@ -19,7 +19,7 @@
 * run:
 ######
 
-    $ ./build.sh
+    $ bash build.sh
 
 this will pass variables to docker-compose up
 
@@ -27,7 +27,7 @@ this will pass variables to docker-compose up
 * run:
 ######
 
-    $ ./tools.sh
+    $ bash tools.sh
  
 this should make your life much easier all the items below are available - (this can copied anywhere you like on the host)
 
