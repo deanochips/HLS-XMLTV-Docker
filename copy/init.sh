@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 touch /tmp/init-status
 
 FIRSTSTART="FIRSTSTART_HAPPENED_ALREADY"
@@ -62,6 +61,7 @@ ln -s /usr/bin/ffmpeg /bin/ffmpeg
 ln -s /usr/bin/ffprobe /bin/ffprobe
 
 crontab -l | { cat; echo "*/3       *       *       *       *       /HLS-XMLTV/cron.sh CRON_USER"; } | crontab -
+crontab -l | { cat; echo "*/5       *       *       *       *       /bin/bash /usr/sbin/logrotate  /etc/logrotate.conf"; } | crontab -
 
 else
 echo "Normal Start" > /tmp/init-status
