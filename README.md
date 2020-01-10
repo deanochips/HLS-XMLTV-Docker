@@ -33,9 +33,12 @@ this should make your life much easier all the items below are available - (this
 
 * create concat lists for your channels
 * edit config.cfg changing the info in arg_array with your channel info -  (if you want full episode info and not just filenames you need to enter a tvmaze show id...its the number in the main show url)
-* once all setup, comment out the "IF CRON EXIT" command on line 32 and save
+* once all setup, comment out the "IF CRON EXIT" line in the config file and save
+######
 
-
+    #if [ "$1" = "CRON_USER" ]; then exit; fi
+    
+    
 ### Notes
 if you want to force it to update you can restart, or it will boot itself in 3 minuites
 you can watch the files start to be generated in <docker_host_ip>:3000/,
