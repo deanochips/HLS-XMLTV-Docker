@@ -7,7 +7,6 @@ if [ ! -e /root/$FIRSTSTART ]; then
 echo "First Start" > /tmp/init-status
 
 touch /root/$FIRSTSTART
- touch /var/log/messages
 
 cd /
 
