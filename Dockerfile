@@ -34,7 +34,7 @@ COPY /copy/init.sh /copy/.bashrc /copy/default /copy/nginx.conf /copy/rotate_hls
 RUN mv /tmp/init.sh /init.sh ; \
   rm /etc/nginx/nginx.conf ; \
   mv /tmp/nginx.conf /etc/nginx/nginx.conf ; \
-  mv rotate_hls_xmltv_logs /etc/logrotate.d/rotate_hls_xmltv_logs ; \
+  mv /tmp/rotate_hls_xmltv_logs /etc/logrotate.d/rotate_hls_xmltv_logs ; \
   rm /etc/nginx/conf.d/default.conf ; \
   mv /tmp/default /etc/nginx/conf.d/default.conf ; \
   mv /tmp/.bashrc /root/.bashrc ; \
