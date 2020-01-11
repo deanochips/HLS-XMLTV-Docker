@@ -1,99 +1,97 @@
-# ~/.bashrc: executed by bash(1) for non-login shells.
-# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-# for examples
+#!/bin/bash
 
-# If not running interactively, don't do anything
-[ -z "$PS1" ] && return
+# For more information regarding bash shells, see:
+# https://www.gnu.org/software/bash/manual/bash.html#Bash-Startup-Files
 
-# don't put duplicate lines in the history. See bash(1) for more options
-# ... or force ignoredups and ignorespace
-HISTCONTROL=ignoredups:ignorespace
+#
+# This script is sourced before '/usr/share/entrypoint.sh'
+# Look in '/usr/share/entrypoint.sh' for examples of setting
+# environment variables in the environment immediately
+# after entering the container
+#
 
-# append to the history file, don't overwrite it
-shopt -s histappend
+# Regular Colors
+black='\033[0;30m'
+red='\033[0;31m'   
+green='\033[0;32m'
+yellow='\033[0;33m'
+blue='\033[0;34m'
+purple='\033[0;35m'
+cyan='\033[0;36m'
+white='\033[0;37m'
+transparent="\e[0m"			
 
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
 
-# check the window size after each command and, if necessary,
-# update the values of LINES and COLUMNS.
+sleep 0.01 && echo -e "$green "
+sleep 0.02 && echo -e "  ██╗░░██╗██╗░░░░░░██████╗  ░░░░██╗  ██╗░░██╗███╗░░░███╗██╗░░░░░████████╗██╗░░░██╗"
+sleep 0.02 && echo -e "  ██║░░██║██║░░░░░██╔════╝  ░░░██╔╝  ╚██╗██╔╝████╗░████║██║░░░░░╚══██╔══╝██║░░░██║"
+sleep 0.02 && echo -e "  ███████║██║░░░░░╚█████╗░  ░░██╔╝░  ░╚███╔╝░██╔████╔██║██║░░░░░░░░██║░░░╚██╗░██╔╝"
+sleep 0.02 && echo -e "  ██╔══██║██║░░░░░░╚═══██╗  ░██╔╝░░  ░██╔██╗░██║╚██╔╝██║██║░░░░░░░░██║░░░░╚████╔╝░"
+sleep 0.02 && echo -e "  ██║░░██║███████╗██████╔╝  ██╔╝░░░  ██╔╝╚██╗██║░╚═╝░██║███████╗░░░██║░░░░░╚██╔╝░░"
+sleep 0.02 && echo -e "  ╚═╝░░╚═╝╚══════╝╚═════╝░  ╚═╝░░░░  ╚═╝░░╚═╝╚═╝░░░░░╚═╝╚══════╝░░░╚═╝░░░░░░╚═╝░░░"
+echo -e ""
+sleep 0.02 && echo -e "  ██╗░░██╗░█████╗░███╗░░░███╗███████╗"
+sleep 0.02 && echo -e "  ██║░░██║██╔══██╗████╗░████║██╔════╝"
+sleep 0.02 && echo -e "  ███████║██║░░██║██╔████╔██║█████╗░░"
+sleep 0.02 && echo -e "  ██╔══██║██║░░██║██║╚██╔╝██║██╔══╝░░"
+sleep 0.02 && echo -e "  ██║░░██║╚█████╔╝██║░╚═╝░██║███████╗"
+sleep 0.02 && echo -e "  ╚═╝░░╚═╝░╚════╝░╚═╝░░░░░╚═╝╚══════╝"
+echo -e ""
+sleep 0.02 && echo -e "  ██████╗░██████╗░░█████╗░░█████╗░██████╗░░█████╗░░█████╗░░██████╗████████╗██╗███╗░░██╗░██████╗░"
+sleep 0.02 && echo -e "  ██╔══██╗██╔══██╗██╔══██╗██╔══██╗██╔══██╗██╔══██╗██╔══██╗██╔════╝╚══██╔══╝██║████╗░██║██╔════╝░"
+sleep 0.02 && echo -e "  ██████╦╝██████╔╝██║░░██║███████║██║░░██║██║░░╚═╝███████║╚█████╗░░░░██║░░░██║██╔██╗██║██║░░██╗░"
+sleep 0.02 && echo -e "  ██╔══██╗██╔══██╗██║░░██║██╔══██║██║░░██║██║░░██╗██╔══██║░╚═══██╗░░░██║░░░██║██║╚████║██║░░╚██╗"
+sleep 0.02 && echo -e "  ██████╦╝██║░░██║╚█████╔╝██║░░██║██████╔╝╚█████╔╝██║░░██║██████╔╝░░░██║░░░██║██║░╚███║╚██████╔╝"
+sleep 0.02 && echo -e "  ╚═════╝░╚═╝░░╚═╝░╚════╝░╚═╝░░╚═╝╚═════╝░░╚════╝░╚═╝░░╚═╝╚═════╝░░░░╚═╝░░░╚═╝╚═╝░░╚══╝░╚═════╝░"
+echo -e ""
+sleep 0.01
+echo -e $yellow"             for all your entertainment needs  ("$red"There is always something good on...."$yellow")"
+sleep 0.01
+echo -e $blue "           	      Made with <3 by:"$yellow" deanochips ("$red"deanochips@gmail.com"$yellow")"
+sleep 0.01
+echo -e ""
+
+
+# colorized pretty print "username pwd $ "
+export PS1='\[\e]0;\u \w\a\]\[\033[01;32m\]\u \[\033[01;34m\]\w \$\[\033[00m\] '
+
+
+# Aliases
+alias sudo='sudo '              # sudo: make aliases work
+alias nano='nano -wcAiLS'       # nano: -w: don't wrap long lines
+                                #       -c: constantly show cursor position
+                                #       -A: enable smart home key
+                                #       -i: automatically indent new lines
+                                #       -L: don't add newlines to the ends of files
+                                #       -S: scroll by line instead of half-screen
+alias apk='apk --progress'      # apk: show progress bar
+
+# Shell Options
 shopt -s checkwinsize
 
-# make less more friendly for non-text input files, see lesspipe(1)
-[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+# Color Definitions for .bashrc
+COL_YEL="\[\e[1;33m\]"
+COL_GRA="\[\e[0;37m\]"
+COL_WHI="\[\e[1;37m\]"
+COL_GRE="\[\e[1;32m\]"
+COL_RED="\[\e[1;31m\]"
 
-# set variable identifying the chroot you work in (used in the prompt below)
-if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
-    debian_chroot=$(cat /etc/debian_chroot)
-fi
-
-# set a fancy prompt (non-color, unless we know we "want" color)
-case "$TERM" in
-    xterm-color) color_prompt=yes;;
-esac
-
-# uncomment for a colored prompt, if the terminal has the capability; turned
-# off by default to not distract the user: the focus in a terminal window
-# should be on the output of commands, not on the prompt
-#force_color_prompt=yes
-
-if [ -n "$force_color_prompt" ]; then
-    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-	# We have color support; assume it's compliant with Ecma-48
-	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-	# a case would tend to support setf rather than setaf.)
-	color_prompt=yes
-    else
-	color_prompt=
-    fi
-fi
-
-if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+# Bash Prompt
+if test "$UID" -eq 0 ; then
+        _COL_USER=$COL_RED
+        _p=" #"
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+        _COL_USER=$COL_GRE
+        _p=">"
 fi
-unset color_prompt force_color_prompt
 
-# If this is an xterm set the title to user@host:dir
-case "$TERM" in
-xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    ;;
-*)
-    ;;
+
+COLORIZED_PROMPT="${_COL_USER}\u${COL_WHI}@${COL_YEL}\h${COL_WHI}:\w${_p} \[\e[m\]"
+case $TERM in
+        *term | rxvt | screen )
+                PS1="${COLORIZED_PROMPT}\[\e]0;\u@\h:\w\007\]" ;;
+        linux )
+                PS1="${COLORIZED_PROMPT}" ;;
+        * )
+                PS1="\u@\h:\w${_p} " ;;
 esac
-
-# enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
-
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
-fi
-
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-
-# Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
-
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
-
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
-#if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
-#    . /etc/bash_completion
-#fi
