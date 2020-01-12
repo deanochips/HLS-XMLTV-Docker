@@ -21,7 +21,7 @@ cyan='\033[0;36m'
 white='\033[0;37m'
 transparent="\e[0m"			
 
-
+clear
 sleep 0.01 && echo -e "$green "
 sleep 0.02 && echo -e "  ██╗░░██╗██╗░░░░░░██████╗  ░░░░██╗  ██╗░░██╗███╗░░░███╗██╗░░░░░████████╗██╗░░░██╗"
 sleep 0.02 && echo -e "  ██║░░██║██║░░░░░██╔════╝  ░░░██╔╝  ╚██╗██╔╝████╗░████║██║░░░░░╚══██╔══╝██║░░░██║"
@@ -58,12 +58,13 @@ export PS1='\[\e]0;\u \w\a\]\[\033[01;32m\]\u \[\033[01;34m\]\w \$\[\033[00m\] '
 
 # Aliases
 alias sudo='sudo '              # sudo: make aliases work
-alias nano='nano -wcAiLS'       # nano: -w: don't wrap long lines
+
+alias nano='nano -wcAiL'       # nano: -w: don't wrap long lines
                                 #       -c: constantly show cursor position
                                 #       -A: enable smart home key
                                 #       -i: automatically indent new lines
                                 #       -L: don't add newlines to the ends of files
-                                #       -S: scroll by line instead of half-screen
+
 alias apk='apk --progress'      # apk: show progress bar
 
 # Shell Options
