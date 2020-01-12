@@ -28,6 +28,7 @@ unzip master.zip
 
 rm -Rf /HLS-XMLTV---Home-Broadcasting-master/channels
 rm -Rf /HLS-XMLTV---Home-Broadcasting-master/concat_lists
+rm -Rf /HLS-XMLTV---Home-Broadcasting-master/cache
 
 mv /HLS-XMLTV---Home-Broadcasting-master/* /HLS-XMLTV/
 rm -Rf /HLS-XMLTV---Home-Broadcasting-master/
