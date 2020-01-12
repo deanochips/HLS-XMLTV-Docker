@@ -60,8 +60,8 @@ ln -s /HLS-XMLTV/config/config.cfg /HLS-XMLTV/config.cfg
 ln -s /usr/bin/ffmpeg /bin/ffmpeg
 ln -s /usr/bin/ffprobe /bin/ffprobe
 
-crontab -l | { echo -e "TERM=dumb"; cat "/etc/crontabs/root"; } | crontab -
-crontab -l | { cat; echo "*/3       *       *       *       *       /HLS-XMLTV/cron.sh CRON_USER"; } | crontab -
+crontab -l | { echo -e "SHELL=/bin/bash\nBASH_ENV=\"/root/.bashrc\"\n"; cat "/etc/crontabs/root"; } | crontab -
+crontab -l | { cat; echo "*/3       *       *       *       *       (export TERM=xterm; /HLS-XMLTV/cron.sh CRON_USER)"; } | crontab -
 
 touch /var/log/messages
 crontab -l | { cat; echo "*/5       *       *       *       *       /usr/sbin/logrotate  /etc/logrotate.conf"; } | crontab -
@@ -76,7 +76,7 @@ chown www-data:www-data /var/www/html/streams
 chmod g+s /var/www/html/streams
 fi
 
-/HLS-XMLTV/cron.sh CRON_USER &
+(export TERM=xterm; /HLS-XMLTV/cron.sh CRON_USER) &
 
 
 exec "$@"
