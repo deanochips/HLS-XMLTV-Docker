@@ -60,6 +60,7 @@ ln -s /HLS-XMLTV/config/config.cfg /HLS-XMLTV/config.cfg
 ln -s /usr/bin/ffmpeg /bin/ffmpeg
 ln -s /usr/bin/ffprobe /bin/ffprobe
 
+crontab -l | { echo -e "TERM=dumb"; cat "/etc/crontabs/root"; } | crontab -
 crontab -l | { cat; echo "*/3       *       *       *       *       /HLS-XMLTV/cron.sh CRON_USER"; } | crontab -
 
 touch /var/log/messages
