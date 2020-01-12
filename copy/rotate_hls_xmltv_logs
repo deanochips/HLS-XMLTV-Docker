@@ -1,0 +1,10 @@
+/tmp/hxhb/logs/*/*.log {
+    su www-data www-data
+        size 10M
+        copytruncate
+        missingok
+        rotate 7
+        compress
+        notifempty
+        nocreate
+}
