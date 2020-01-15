@@ -22,7 +22,8 @@ RUN echo http://dl-cdn.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositor
  findutils \
  nginx \
  youtube-dl \
- xmltv
+ xmltv \
+ socat
  
 # merged COPY into one call to reduce docker layers
 COPY /copy/init.sh /copy/.bashrc /copy/default /copy/nginx.conf /copy/rotate_hls_xmltv_logs /tmp/
