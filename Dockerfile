@@ -6,7 +6,7 @@ EXPOSE 3000 80
 
 # procps needed for (ps -p) to detect if process is running
 RUN echo http://dl-cdn.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositories ; \
-echo http://dl-cdn.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositories ; \
+echo http://dl-cdn.alpinelinux.org/alpine/edge/community >> /etc/apk/repositories ; \
  apk add --no-cache fdk-aac-dev \
  tini \
  procps \
